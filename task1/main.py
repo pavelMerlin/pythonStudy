@@ -90,13 +90,70 @@ def communal_services():
     time.sleep(3)
 
 
+# tax services calculator
+def tax_calculator():
+    # take user income
+    income = float(input("\033[37mДобро пожаловать в налоговую!\n"
+                         "Сколько денег Вам пришло на счет?\n"
+                         "\033[4mЗначение: \033[0m"))
+
+    # generate tax value
+    tax_value = round(random.uniform(0.3, 1.5), 2)
+    print(f"\nПроцент налога \033[31m{tax_value}%\033[0m")
+
+    # 10 * (1 / 100) = 0,1 the tax price
+    stole_money = income * (tax_value / 100)
+
+    # income 10 - 0,1 = 9,9; real user income
+    real_income = income - stole_money
+
+    # final user info
+    print("\n\033[37mИтого: \n"
+          f"\tВам нужно оплатить \033[31m{round(stole_money, 2)}$\033[37m налога\n"
+          f"\tВаш остаток \033[31m{round(real_income, 2)}$\033[0m\n")
+
+    # waiting for the main screen
+    time.sleep(5)
+
+
+# oil calculator
+def oil_calculator():
+    # consumption per 100 kilometers
+    consumption = float(input("\033[37mПривет странник!\n"
+                              "Масло считаем?? Ну ладно... \n"
+                              "Сколько кобылка ест на 100км?\n"
+                              "\033[4mЗначение: \033[0m"))
+
+    # journey range
+    journey_range = float(input("\n\033[37mКак далеко едешь?\n"
+                                "\033[4mЗначение:\033[0m "))
+
+    # generate how much does oil costs
+    oil_cost = round(random.uniform(1.3, 2.1), 2)
+
+    # count our journey cost
+    journey_price = (consumption * oil_cost) * journey_range / 100
+
+    # print our info about journey price
+    print("\nДалеко заедешь...\n"
+          f"\t\033[31mСолярка по {oil_cost}$\033[0m\n"
+          f"\t\033[31mПоездка будет стоить {journey_price}$\033[0m\n")
+
+    # waiting for the main screen
+    time.sleep(5)
+
+
+# cycle for user tries
 while True:
     # start screen to choose the program
-    programChose = input("Выберите программу:\n"
-                         "0. Выйти\n"
-                         "1. Радианты в валорантов\n"
-                         "2. Комуналка\n")
+    programChose = input("\nВыберите программу:\n"
+                         "\t0. Выйти\n"
+                         "\t1. Радианты в валорантов\n"
+                         "\t2. Комуналка\n"
+                         "\t3. Налоги\n"
+                         "\t4. Бензоподсчет\n")
 
+    # analyze user choice
     if programChose == '0':
         break
     elif programChose == '1':
@@ -105,4 +162,9 @@ while True:
     elif programChose == '2':
         communal_services()
         continue
-
+    elif programChose == '3':
+        tax_calculator()
+        continue
+    elif programChose == '4':
+        oil_calculator()
+        continue
