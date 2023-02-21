@@ -1,6 +1,5 @@
 import time
 
-
 # cycle for users tries
 while True:
     # main screen and user palindrome
@@ -8,6 +7,11 @@ while True:
                             "ладно...\n"
                             "введи мне палинdrом\n"
                             ">>> ")
+
+    ban_symbols = ['>', '.', ',', '-', ':', ';', '?', '!', '"', "'", " "]
+
+    for i in range(len(ban_symbols)):
+        user_palindrome = user_palindrome.lower().replace(ban_symbols[i], "")
 
     # revers user input
     reversed_palindrome = user_palindrome[::-1]
