@@ -10,6 +10,7 @@ import time
 # \033[0m — сброс к начальным значениям.
 # \033[31m - red
 
+
 # Convert radians to degrees and vice versa
 def degree_swap():
     # num which user write in console (deg or rad); convert_num - is solve
