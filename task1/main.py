@@ -23,14 +23,14 @@ def degree_swap():
               "\nВведите \"P\" если вы хотите перевести грудусы в радианы")
 
         # take user info
-        choise = input()
+        chose = input()
 
         # R - deg to rad; P - rad to deg; else - error
-        if choise == 'R':
+        if chose == 'R':
             user_num = int(input("Введите радианы: "))
             convert_num = math.degrees(user_num)
             break
-        elif choise == 'P':
+        elif chose == 'P':
             user_num = int(input("Введите градусы: "))
             convert_num = math.radians(user_num)
             break
