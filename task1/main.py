@@ -1,5 +1,10 @@
+# Библиотека для градусов
 import math
+
+# Библиотека для рандомных чисел
 import random
+
+# Да. Я импортнул время
 import time
 
 
@@ -11,8 +16,11 @@ import time
 # \033[31m - red
 
 
-# Convert radians to degrees and vice versa
 def degree_swap():
+    """
+    Convert radians to degrees and vice versa
+    :return: your mum
+    """
     # num which user write in console (deg or rad); convert_num - is solve
     user_num, convert_num = 0, 0
 
@@ -44,8 +52,11 @@ def degree_swap():
     time.sleep(3)
 
 
-# communal services calculator
 def communal_services():
+    """
+    communal services' calculator
+    :return: your father
+    """
     # list with future prices
     tariffs = []
     # dictionary with communal services names
@@ -91,8 +102,11 @@ def communal_services():
     time.sleep(3)
 
 
-# tax services calculator
 def tax_calculator():
+    """
+    tax services calculator
+    :return: secret
+    """
     # take user income
     income = float(input("\033[37mДобро пожаловать в налоговую!\n"
                          "Сколько денег Вам пришло на счет?\n"
@@ -117,8 +131,11 @@ def tax_calculator():
     time.sleep(5)
 
 
-# oil calculator
 def oil_calculator():
+    """
+    USA oil calculator
+    :return: noting
+    """
     # consumption per 100 kilometers
     consumption = float(input("\033[37mПривет странник!\n"
                               "Масло считаем?? Ну ладно... \n"

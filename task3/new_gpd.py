@@ -14,6 +14,11 @@ anim_printer = "\033[37mПривет я ботик из 1992\033[0m"
 
 # slow bot printer function
 def printer(bot_sentence):
+    """
+    берем строку и медленно пишем
+    :param bot_sentence: строка которую ботик будет медленно писать
+    :return: попу
+    """
     for i in range(len(bot_sentence)):
         print(bot_sentence[i], end="")
         rnd_timeout = random.uniform(.2, .5)
@@ -31,11 +36,13 @@ rnd = random.randint(0, 2)
 while True:
     user_sentence = input("\n\t").lower()
 
+    # ищем слова из списков ниже
     hello_dictionary = ["привет", "хай", "здравствуй", "добрый "]
     how_are_you = ["как дела", "как движ", "как сам", "что делаешь", "дел"]
     advices = ["посоветуй фильм", "фильм", "посоветуй сериал", "посоветуй"]
     bye_dictionary = ["пока", "до встречи"]
 
+    # генерируем имена и тд
     user_random_names = ["пися", "попа", "кукиш"]
     bot_emotion = ["плохо", "норм", "каифі!"]
     bot_films = ["Сумерки отличный сериал про трах.", "Трансгендер топовый фильм!!!", "рекомендую почитать книгу "
