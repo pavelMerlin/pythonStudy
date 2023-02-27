@@ -7,9 +7,25 @@ from triangle import *
 def triangle_existence():
     if len(sides) == 3:
         existence = (sides[0] + sides[1]) - sides[2]
-        if existence < 0:
-            print("Такой треугольник не может существовать!!!")
+        if existence <= 0:
+            print("Такой треугольник не может существовать!!!\n")
             main_screen()
+
+    if len(degs) == 3:
+        info = sum(degs) != 180
+        if info is True:
+            print(f"Сумма градусов введена не верно {sum(degs)}\n")
+            main_screen()
+
+    if len(sides) > 3 or len(degs) > 3:
+        print("Ошибка ввода")
+        main_screen()
+    elif len(sides) == 0:
+        print("Ошибка ввода")
+        main_screen()
+    elif len(sides) == 1 and len(degs) < 0:
+        print("Ошибка ввода")
+        main_screen()
 
 
 def a_sina_sinb():
@@ -20,11 +36,22 @@ def a_sina_sinb():
     b = sides[0] * math.sin(math.radians(degs[1])) / math.sin(math.radians(degs[2]))
 
     print("Стороны треуголки равны:\n"
-          f"\t A: \t{a}\n"
-          f"\t B: \t{b}\n"
+          f"\t A: \t{round(a, 2)}\n"
+          f"\t B: \t{round(b, 2)}\n"
           f"\t C: \t{sides[0]}\n")
     print(f"\tУгол Альфа равен \t{degs[2]}\n")
 
+
+def deg_find():
+    a = 2 * sides[0] * sides[2]
+    b = pow(sides[0], 2) + pow(sides[2], 2) - pow(sides[1], 2)
+    cos_a = math.cos(math.degrees(a / b))
+    cos_b = (pow(sides[0], 2) + pow(sides[1], 2) - pow(sides[2], 2)) / (2 * sides[0] * sides[1])
+    cos_g = (pow(sides[1], 2) + pow(sides[2], 2) - pow(sides[0], 2)) / (2 * sides[2] * sides[1])
+
+    print(f"{math.degrees(cos_a)} угол А\n"
+          f"{math.degrees(cos_b)} угол B\n"
+          f"{math.degrees(cos_g)} угол J\n")
 
 def a_b_cosj():
     c = math.sqrt(pow(sides[0], 2) + pow(sides[1], 2) - 2 * sides[0] * sides[1] * math.cos(math.radians(degs[0])))
@@ -35,6 +62,10 @@ def a_b_cosj():
           f"\t C: \t{sides[2]}\n")
     print(f"\tУгол Альфа равен \t{degs[0]}\n")
 
+
+def perimetr():
+    p = sides[0] + sides[1] + sides[2]
+    print(p)
 
 def pifagor():
 
