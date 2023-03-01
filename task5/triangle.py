@@ -91,6 +91,9 @@ def solve():
         solve_dic.append("\nВведи 4 - Вы можете найти периметр\n")
         solve_dic.append("\nВведи 5 - Вы можете найти все углы в треугольнике\n")
 
+    if len(sides) == 3 and len(degs) == 0:
+        solve_dic.append("\nВведи 6 - Вы можете найти высоту\n")
+
     print("Как вы хотите решить задачу?\n"
           "\tДано:")
     for i in range(len(sides)):
@@ -118,6 +121,8 @@ def solve():
         perimetr()
     elif user_choice == '5':
         deg_find()
+    elif user_choice == '6':
+        height()
     else:
         print("\nНевозможно\n")
         main_screen()

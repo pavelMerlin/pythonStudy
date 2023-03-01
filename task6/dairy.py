@@ -6,21 +6,20 @@ print("""Меню команд:
 - `longest` - виводить збережені нотатки у порядку їх довжини - від найдовшої до найкоротшої
 - `shortest` - виводить збережені нотатки у порядку їх довжини - від найкоротшоїдо найдовшої\n""")
 
-notes = ['a', 'ww', 'wqdqwd', 'asd']
-
-add = False
+# notes = ['a', 'ww', 'wqdqwd', 'asd']
+notes = []
 
 while True:
-    user_input = input("com >> ")
+    user_input = input("Введи команду >> ")
 
     if user_input == "add":
         notes.append(input(">> "))
-        print("Ты создал поп\n")
+        print("Ты добавил заметку\n")
     elif user_input == "earliest":
         print(notes)
     elif user_input == "latest":
         print(notes.reverse())
-    elif user_input == "l" or user_input == "sh":
+    elif user_input == "longest" or user_input == "shortest":
         for j in range(len(notes)):
             for i in range(len(notes)):
                 note_len = len(notes[i])

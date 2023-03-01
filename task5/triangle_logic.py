@@ -43,15 +43,16 @@ def a_sina_sinb():
 
 
 def deg_find():
-    a = 2 * sides[0] * sides[2]
-    b = pow(sides[0], 2) + pow(sides[2], 2) - pow(sides[1], 2)
-    cos_a = math.cos(math.degrees(a / b))
-    cos_b = (pow(sides[0], 2) + pow(sides[1], 2) - pow(sides[2], 2)) / (2 * sides[0] * sides[1])
-    cos_g = (pow(sides[1], 2) + pow(sides[2], 2) - pow(sides[0], 2)) / (2 * sides[2] * sides[1])
+    cos_a = (sides[0] ** 2 + sides[2] ** 2 - sides[1] ** 2) / (2 * sides[0] * sides[2])
 
-    print(f"{math.degrees(cos_a)} угол А\n"
-          f"{math.degrees(cos_b)} угол B\n"
-          f"{math.degrees(cos_g)} угол J\n")
+    cos_b = (sides[0] ** 2 + sides[1] ** 2 - sides[2] ** 2) / (2 * sides[0] * sides[1])
+
+    cos_c = (sides[1] ** 2 + sides[2] ** 2 - sides[0] ** 2) / (2 * sides[2] * sides[1])
+
+    print(f"{round(math.degrees(math.acos(cos_a)), 2)} угол А\n"
+          f"{round(math.degrees(math.acos(cos_b)), 2)} угол B\n"
+          f"{round(math.degrees(math.acos(cos_c)), 2)} угол J\n")
+
 
 def a_b_cosj():
     c = math.sqrt(pow(sides[0], 2) + pow(sides[1], 2) - 2 * sides[0] * sides[1] * math.cos(math.radians(degs[0])))
@@ -66,6 +67,13 @@ def a_b_cosj():
 def perimetr():
     p = sides[0] + sides[1] + sides[2]
     print(p)
+
+
+def height():
+    p = (sides[0] + sides[1] + sides[2]) / 2
+    h = (2 * math.sqrt(p * (p - sides[0]) * (p - sides[1]) * (p - sides[2]))) / sides[0]
+    print(f"Высота равна: {round(h, 2)}\n")
+
 
 def pifagor():
 
