@@ -1,12 +1,10 @@
-
-def fibonache_gen(user_num: int):
-    fibonaci_numbers = [1]
-    for i in range(0, user_num):
-        print(fibonaci_numbers)
-        fibonaci_numbers.append(fibonaci_numbers[i - 1] + fibonaci_numbers[i])
-    print(fibonaci_numbers)
+def fibonacci_gen(user_num: int):
+    fibonacci_numbers = [0, 1]
+    for i in range(2, user_num):
+        fibonacci_numbers.append(fibonacci_numbers[i - 1] + fibonacci_numbers[i - 2])
+    return fibonacci_numbers
 
 
 if __name__ == "__main__":
-    user_number = input()
-    fibonache_gen(int(user_number))
+    user_number = int(input())
+    print(fibonacci_gen(user_number))
